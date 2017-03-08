@@ -10,9 +10,9 @@ Please run the script in Root
 
    Run Script by typing:
 
-```
-$ sh setup.sh
-```
+   ```
+   $ sh setup.sh
+   ```
 
    Then follow prompts
 
@@ -20,14 +20,14 @@ $ sh setup.sh
 
    Install git by:
 
-```
-$ apt-get install git
-```
+   ```
+   $ apt-get install git
+   ```
 
    Then type:
 
-```
-$ git clone git://github.com/m4777h145/ubuntu-gameserver.git
-```
+   ```
+   $ git clone git://github.com/m4777h145/ubuntu-gameserver.git
+   ```
 
    Follow prompts afterwards
