@@ -8,26 +8,26 @@ Please run the script in Root
 ## Installation
 1. Installation using downloaded Script
 
-Run Script by typing:
+   Run Script by typing:
 
 ```
 $ sh setup.sh
 ```
 
-Then follow prompts
+   Then follow prompts
 
 2. Installation using git
 
-Install git by:
+   Install git by:
 
 ```
 $ apt-get install git
 ```
 
-Then type:
+   Then type:
 
 ```
 $ git clone git://github.com/m4777h145/ubuntu-gameserver.git
 ```
 
-Follow prompts afterwards
+   Follow prompts afterwards
