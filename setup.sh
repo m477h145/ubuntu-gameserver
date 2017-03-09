@@ -1,6 +1,8 @@
 #!/bin/bash
 
-apt-get install git screen crontab nano curl -y
+add-apt-repository ppa:webupd8team/java
+apt-get update
+apt-get install git screen crontab nano curl lib32gcc1 libvorbisfile3 bunzip oracle-java8-installer -y
 
 echo "Please type in the Password for the bot account."
 sleep 5
@@ -25,11 +27,12 @@ if [$option == "1"]; then
   cd mineraft
     echo "Please type in Minecraft Version. e.g 1.11.2"
     read version
-    curl -L -O https://s3.amazonaws.com/Minecraft.Download/versions/$version/minecraft_server.$version.jar
+    curl -L -O "https://s3.amazonaws.com/Minecraft.Download/versions/$version/minecraft_server.$version.jar"
     mv minecraft_server.$version.jar minecraft_server.jar
-    curl -L -O https://github.com/m477h145/ubuntu-gameserver/raw/master/minecraft/start.sh
-    curl -L -O https://github.com/m477h145/ubuntu-gameserver/raw/master/minecraft/update.sh
+    curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/minecraft/start.sh"
+    curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/minecraft/update.sh"
   echo "Minecraft Server setup complete."
+  sleep 2
 fi
 
 if [$option == "2"]; then
@@ -37,7 +40,7 @@ if [$option == "2"]; then
   cd spigot
     mkdir build
     cd build
-    curl -L -O https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+    curl -L -O "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
     echo "Please type in Spigot Version. e.g 1.11.2"
     read version2
     git config --global --unset core.autocrlf
@@ -45,27 +48,40 @@ if [$option == "2"]; then
     mv spigot-$version2.jar spigot.jar
     cp spigot.jar /home/bot/spigot/spigot.jar
     cd /home/bot/minecraft
-    curl -L -O https://github.com/m477h145/ubuntu-gameserver/raw/master/spigot/start.sh
-    curl -L -O https://github.com/m477h145/ubuntu-gameserver/raw/master/spigot/update.sh
+    curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/spigot/start.sh"
+    curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/spigot/update.sh"
   echo "Spigot Server setup complete."
+  sleep 2
 fi
 
 if [$option == "3"]; then
   mkdir steamcmd
   cd steamcmd
+  curl -L -O "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
+  echo "SteamCMD setup complete"
+  sleep 2
 fi
 
 if [$option == "4"]; then
   mkdir starbound
-  cd starbound
-  #git clone git://github.com/m477h145/
+  cd /home/bot/steamcmd/
+  ./steamcmd.sh +login anonymous +force_install_dir /home/bot/starbound +app_update 211820 validate +quit
+  cd /home/bot/starbound
+  curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/starbound/start.sh"
+  curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/starbound/update.sh"
+  echo "Starbound setup complete"
+  sleep 2
 fi
 
 if [$option == "5"]; then
   mkdir ts3server
   cd ts3server
+  curl -L -O "http://dl.4players.de/ts/releases/3.0.13.6/teamspeak3-server_linux_amd64-3.0.13.6.tar.bz2" | tar xvjf -
+  echo "TeamSpeak3 Server setup complete"
+  sleep 2
 fi
 
 if [$option == "Q" || $option == "q"]; then
   echo "Quitting Script"
+  sleep 2
 fi
