@@ -2,8 +2,8 @@
 Setup Script for an Ubuntu Gameserver
 
 ## Usage
-Either copy the setup Script to your Server or install it using git
-Please run the script in Root
+Either copy the setup Script to your Server or install it using git.<br>
+Please run the script in Root.
 
 ## Installation
 1. Installation using downloaded Script
@@ -18,6 +18,7 @@ Please run the script in Root
 
 2. Installation using git
 
+   ATTENTION: This will download all Minecraft, Spigot & Starbound scripts.<br>You might have to delete them later if you don't want them.<br>
    Install git by:
 
    ```
