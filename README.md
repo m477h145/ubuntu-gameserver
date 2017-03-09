@@ -1,9 +1,11 @@
 # ubuntu-gameserver
-Setup Script for an Ubuntu Gameserver
+Setup Script for an Ubuntu Gameserver<br><br>
+This Script is capable of installing a Minecraft, Spigot, Starbound and TeamSpeak3 server.<br>
+It also installs SteamCMD.
 
 ## Usage
-Copy the setup Script to your Server.<br>
-Please run the script in Root.
+Copy the Setup Script to your Server.<br>
+Please run the Script in Root.
 
 ## Installation
 1. Enter Root.
