@@ -18,6 +18,7 @@ echo "(2) Install Spigot"
 echo "(3) Install SteamCMD"
 echo "(4) Install Starbound [Requires SteamCMD to be installed first]"
 echo "(5) Install TeamSpeak3"
+echo "(6) Install custom SteamCMD game"
 echo "(Q) Quit"
 
 read option
@@ -79,6 +80,16 @@ if [$option == "5"]; then
   curl -L -O "http://dl.4players.de/ts/releases/3.0.13.6/teamspeak3-server_linux_amd64-3.0.13.6.tar.bz2" | tar xvjf -
   echo "TeamSpeak3 Server setup complete"
   sleep 2
+fi
+
+if [$option == "6"]; then
+  echo "How should the game folder be called?"
+  read folder
+  mkdir $folder
+  cd /home/bot/steamcmd
+    echo "Which game would you like to install? Please type in the AppID.(You can look it up on steamdb.info)"
+    read appid
+  ./steamcmd.sh +login anonymous +force_install_dir /home/bot/$folder +app_update $appid validate +quit
 fi
 
 if [$option == "Q" || $option == "q"]; then
