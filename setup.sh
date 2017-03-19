@@ -1,9 +1,10 @@
 #!/bin/bash
 
-apt-add-repository ppa:webupd8team/java -y
-sleep 5
 apt-get update
-apt-get install git screen crontab nano curl lib32gcc1 libvorbisfile3 bzip2 oracle-java8-installer -y
+apt-get install git screen crontab nano curl lib32gcc1 software-properties-common libvorbisfile3 bzip2 -y
+add-apt-repository ppa:webupd8team/java
+apt-get update
+apt-get install oracle-java8-installer  -y
 
 echo "Please type in the Password for the bot account."
 sleep 5
