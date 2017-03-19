@@ -50,7 +50,7 @@ fi
 if [$option == '3']; then
   mkdir steamcmd
   cd steamcmd
-  curl -L -O "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
+  curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
   echo "SteamCMD setup complete"
   sleep 2
 fi
