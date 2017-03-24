@@ -25,7 +25,7 @@ echo "(Q) Quit"
 
 read option
 
-if [$option == '1'];
+if [ $option == '1' ];
   then
   mkdir minecraft
   cd mineraft
@@ -39,7 +39,7 @@ if [$option == '1'];
   sleep 2
 fi
 
-if [$option == '2'];
+if [ $option == '2' ];
   then
   mkdir spigot
   cd spigot
@@ -52,14 +52,14 @@ if [$option == '2'];
     java -jar BuildTools.jar --rev $version2
     mv spigot-$version2.jar spigot.jar
     cp spigot.jar /home/bot/spigot/spigot.jar
-    cd /home/bot/minecraft
+    cd /home/bot/spigot
     curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/spigot/start.sh"
     curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/spigot/update.sh"
   echo "Spigot Server setup complete."
   sleep 2
 fi
 
-if [$option == '3'];
+if [ $option == '3' ];
   then
   mkdir steamcmd
   cd steamcmd
@@ -68,7 +68,7 @@ if [$option == '3'];
   sleep 2
 fi
 
-if [$option == '4'];
+if [ $option == '4' ];
   then
   mkdir starbound
   cd /home/bot/steamcmd/
@@ -80,7 +80,7 @@ if [$option == '4'];
   sleep 2
 fi
 
-if [$option == '5'];
+if [ $option == '5' ];
   then
   mkdir ts3server
   cd ts3server
@@ -89,7 +89,7 @@ if [$option == '5'];
   sleep 2
 fi
 
-if [$option == '6'];
+if [ $option == '6' ];
   then
   echo "How should the game folder be called?"
   read folder
@@ -100,7 +100,7 @@ if [$option == '6'];
   ./steamcmd.sh +login anonymous +force_install_dir /home/bot/$folder +app_update $appid validate +quit
 fi
 
-if [$option == 'Q' || $option == 'q'];
+if [ $option == 'Q' || $option == 'q' ];
   then
   echo "Quitting Script"
   sleep 2
