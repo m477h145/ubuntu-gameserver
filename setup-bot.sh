@@ -15,7 +15,8 @@ echo "(Q) Quit"
 
 read option
 
-if [$option == '1']; then
+if [$option == '1'];
+  then
   mkdir minecraft
   cd mineraft
     echo "Please type in Minecraft Version. e.g 1.11.2"
@@ -28,7 +29,8 @@ if [$option == '1']; then
   sleep 2
 fi
 
-if [$option == '2']; then
+if [$option == '2'];
+  then
   mkdir spigot
   cd spigot
     mkdir build
@@ -47,7 +49,8 @@ if [$option == '2']; then
   sleep 2
 fi
 
-if [$option == '3']; then
+if [$option == '3'];
+  then
   mkdir steamcmd
   cd steamcmd
   curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
@@ -55,7 +58,8 @@ if [$option == '3']; then
   sleep 2
 fi
 
-if [$option == '4']; then
+if [$option == '4'];
+  then
   mkdir starbound
   cd /home/bot/steamcmd/
   ./steamcmd.sh +login anonymous +force_install_dir /home/bot/starbound +app_update 211820 validate +quit
@@ -66,7 +70,8 @@ if [$option == '4']; then
   sleep 2
 fi
 
-if [$option == '5']; then
+if [$option == '5'];
+  then
   mkdir ts3server
   cd ts3server
   curl -L -O "http://dl.4players.de/ts/releases/3.0.13.6/teamspeak3-server_linux_amd64-3.0.13.6.tar.bz2" | tar xvjf -
@@ -74,7 +79,8 @@ if [$option == '5']; then
   sleep 2
 fi
 
-if [$option == '6']; then
+if [$option == '6'];
+  then
   echo "How should the game folder be called?"
   read folder
   mkdir $folder
@@ -84,7 +90,8 @@ if [$option == '6']; then
   ./steamcmd.sh +login anonymous +force_install_dir /home/bot/$folder +app_update $appid validate +quit
 fi
 
-if [$option == 'Q' || $option == 'q']; then
+if [$option == 'Q' || $option == 'q'];
+  then
   echo "Quitting Script"
   sleep 2
 fi
