@@ -90,7 +90,7 @@ if [ $option == '6' ];
   ./steamcmd.sh +login anonymous +force_install_dir /home/bot/$folder +app_update $appid validate +quit
 fi
 
-if [ $option == 'Q' || $option == 'q' ];
+if [ $option == 'Q' | | $option == 'q' ];
   then
   echo "Quitting Script"
   sleep 2
