@@ -29,12 +29,14 @@ if [ $option == '1' ];
   then
   mkdir minecraft
   cd mineraft
+    mkdir backup
     echo "Please type in Minecraft Version. e.g 1.11.2"
     read version
     curl -L -O "https://s3.amazonaws.com/Minecraft.Download/versions/$version/minecraft_server.$version.jar"
     mv minecraft_server.$version.jar minecraft_server.jar
     curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/minecraft/start.sh"
     curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/minecraft/update.sh"
+    curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/minecraft/backup.sh"
   echo "Minecraft Server setup complete."
   sleep 2
 fi
@@ -43,6 +45,7 @@ if [ $option == '2' ];
   then
   mkdir spigot
   cd spigot
+    mkdir backup
     mkdir build
     cd build
     curl -L -O "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
@@ -55,6 +58,7 @@ if [ $option == '2' ];
     cd /home/bot/spigot
     curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/spigot/start.sh"
     curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/spigot/update.sh"
+    curl -L -O "https://github.com/m477h145/ubuntu-gameserver/raw/master/spigot/backup.sh"
   echo "Spigot Server setup complete."
   sleep 2
 fi
