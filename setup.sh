@@ -107,5 +107,4 @@ fi
 if [ $option == 'Q' ] || [ $option == 'q' ];
   then
   echo "Quitting Script"
-  sleep 2
 fi
